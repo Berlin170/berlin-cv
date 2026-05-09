@@ -79,8 +79,8 @@ export const content = {
       name: "Privasea AI",
       role: "Moderator & Support",
       description: "Front-line support for node setup, wallet ops, and explorer lookups across a privacy-first AI compute network.",
-      logo: /assets/logos/privasea.png,
-      letter: "PR",
+     logo: "/assets/logos/privasea.png",
+letter: "PR",
       logoColor: "#10b981",
       screenshot: "/assets/screenshots/Privasea_DC.png"
     },
