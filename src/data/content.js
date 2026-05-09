@@ -178,7 +178,7 @@ export const content = {
   contact: {
     telegram: { handle: "@Berlin926", url: "https://t.me/Berlin926" },
     twitter:  { handle: "@BerlinBuilder", url: "https://x.com/BerlinBuilder" },
-    discord:  { handle: "berlin170", url: "https://discord.com/users/1297841534078812230" }
+    discord:  { handle: "@berlin170", url: "https://discord.com/users/1297841534078812230" }
   },
 
   resumeUrl: "/Rafiq-Ahmed-CV.pdf"
