@@ -22,10 +22,14 @@ function unlock() {
   const ctx = ensureCtx();
   if (ctx && ctx.state === "suspended") ctx.resume();
   state.unlocked = true;
-  if (state.enabled && !state.startupPlayed) {
-    state.startupPlayed = true;
-    playFile("/assets/sounds/startup.wav");
-  }
+  // Startup chord is opt-in only — play it via Start menu "Restart" or similar.
+  // Auto-playing on first interaction was too loud / intrusive.
+}
+
+// Manual trigger for the iconic Win98 startup chord (e.g. wired to a button)
+export function playStartup() {
+  if (!state.enabled) return;
+  playFile("/assets/sounds/startup.wav");
 }
 
 function playFile(src) {
