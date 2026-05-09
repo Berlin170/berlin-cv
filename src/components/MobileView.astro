@@ -1,0 +1,118 @@
+---
+import { content } from "../data/content.js";
+function isImage(src) { return typeof src === "string" && (src.startsWith("/") || src.startsWith("http")); }
+---
+
+<div id="mobile-view">
+  <div class="m-banner">
+    💡 Open on desktop for the full Win98 experience<br/>
+    <span style="font-size: 11px; color: #555;">Drag windows, click icons, play Minesweeper</span>
+  </div>
+
+  <!-- About -->
+  <section class="m-section">
+    <div class="m-titlebar">
+      <span>About Me</span>
+      <span class="controls"><span>_</span><span>×</span></span>
+    </div>
+    <div class="m-body">
+      <h2>{content.name}</h2>
+      <div class="real-name">a.k.a. {content.realName} · {content.location}</div>
+      {content.bio.map(p => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="m-section">
+    <div class="m-titlebar">
+      <span>Experience</span>
+      <span class="controls"><span>_</span><span>×</span></span>
+    </div>
+    <div class="m-body">
+      {content.experience.map(row => (
+        <div class="m-card">
+          <div class="role">{row.role}</div>
+          <div class="meta">{row.company} · {row.period}</div>
+          <ul>{row.bullets.map(b => <li>{b}</li>)}</ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="m-section">
+    <div class="m-titlebar">
+      <span>Projects</span>
+      <span class="controls"><span>_</span><span>×</span></span>
+    </div>
+    <div class="m-body">
+      {content.projects.map(p => (
+        <div class="m-proj">
+          {p.logo ? (
+            <div class="m-proj-banner" style={`background: ${p.logoBg || "#fff"};`}>
+              <img src={p.logo} alt={p.name} />
+            </div>
+          ) : (
+            <div class="m-proj-banner letter" style={`background: ${p.logoColor};`}>
+              <span>{p.letter}</span>
+            </div>
+          )}
+          <div class="head">
+            <div>
+              <div class="pname">{p.name}</div>
+              <div class="prole">{p.role}</div>
+            </div>
+          </div>
+          <div class="pdesc">{p.description}</div>
+          {p.screenshot && <img class="shot" src={p.screenshot} alt={`${p.name} screenshot`} />}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="m-section">
+    <div class="m-titlebar">
+      <span>Skills</span>
+      <span class="controls"><span>_</span><span>×</span></span>
+    </div>
+    <div class="m-body">
+      {Object.entries(content.skills).map(([group, list]) => (
+        <>
+          <h4 style="margin: 8px 0 6px; padding: 4px 8px; background: #000080; color: #fff; font-size: 13px;">{group}</h4>
+          {list.map(s => (
+            <div class="m-skill-row">
+              <span>{s.name}</span>
+              <span style="font-weight: bold;">{s.level}%</span>
+              <div class="bar"><span style={`width: ${s.level}%`}></span></div>
+            </div>
+          ))}
+        </>
+      ))}
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="m-section">
+    <div class="m-titlebar">
+      <span>Contact</span>
+      <span class="controls"><span>_</span><span>×</span></span>
+    </div>
+    <div class="m-body">
+      <p style="margin: 0 0 8px;">Open to Web3 moderation, community operations, and ecosystem support roles.</p>
+      <div class="m-contact-row">
+        <span>✈ Telegram</span>
+        <a href={content.contact.telegram.url}>{content.contact.telegram.handle}</a>
+      </div>
+      <div class="m-contact-row">
+        <span>𝕏 Twitter</span>
+        <a href={content.contact.twitter.url}>{content.contact.twitter.handle}</a>
+      </div>
+      <div class="m-contact-row">
+        <span>💬 Discord</span>
+        <a href={content.contact.discord.url}>{content.contact.discord.handle}</a>
+      </div>
+      <a class="m-resume-btn" href={content.resumeUrl} download>📄 Download Resume.pdf</a>
+    </div>
+  </section>
+</div>

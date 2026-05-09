@@ -1,0 +1,17 @@
+---
+import WindowFrame from "./WindowFrame.astro";
+---
+
+<WindowFrame id="viewer" title="Image Viewer" label="Image Viewer" icon="/assets/icons/text-file.svg">
+  <div class="viewer-body">
+    <div class="viewer-toolbar">
+      <button id="viewer-zoom-out" title="Zoom out">−</button>
+      <button id="viewer-zoom-in" title="Zoom in">+</button>
+      <button id="viewer-fit" title="Fit to window">⤢</button>
+      <span class="viewer-filename" id="viewer-filename">—</span>
+    </div>
+    <div class="viewer-canvas" id="viewer-canvas">
+      <img id="viewer-img" src="" alt="" />
+    </div>
+  </div>
+</WindowFrame>

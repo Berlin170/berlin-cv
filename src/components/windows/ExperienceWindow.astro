@@ -1,0 +1,33 @@
+---
+import WindowFrame from "./WindowFrame.astro";
+import { content } from "../../data/content.js";
+---
+
+<WindowFrame id="experience" title="Experience" label="Experience" icon="/assets/icons/briefcase.svg">
+  <div class="exp-list">
+    <div class="exp-header">
+      <span></span>
+      <span>Name</span>
+      <span>Company</span>
+      <span>Type</span>
+      <span>Date</span>
+    </div>
+    {content.experience.map((row, i) => (
+      <>
+        <div class="exp-row" data-row={i}>
+          <img src="/assets/icons/briefcase.svg" alt="" />
+          <span>{row.role}</span>
+          <span>{row.company}</span>
+          <span>{row.type}</span>
+          <span>{row.period}</span>
+        </div>
+        <div class="exp-detail" data-detail={i}>
+          <strong>{row.company}</strong> — {row.role}
+          <ul>
+            {row.bullets.map(b => <li>{b}</li>)}
+          </ul>
+        </div>
+      </>
+    ))}
+  </div>
+</WindowFrame>

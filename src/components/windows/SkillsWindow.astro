@@ -1,0 +1,21 @@
+---
+import WindowFrame from "./WindowFrame.astro";
+import { content } from "../../data/content.js";
+---
+
+<WindowFrame id="skills" title="Skills" label="Skills" icon="/assets/icons/toolbox.svg">
+  <div class="skills-body">
+    {Object.entries(content.skills).map(([group, list]) => (
+      <div class="skill-group">
+        <h4>{group}</h4>
+        {list.map(s => (
+          <div class="skill-row">
+            <span>{s.name}</span>
+            <div class="skill-bar"><div class="skill-bar-fill" data-pct={s.level}></div></div>
+            <span class="skill-pct">{s.level}%</span>
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+</WindowFrame>

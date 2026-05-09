@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <rect width="32" height="32" fill="none"/>
+  <!-- page -->
+  <polygon points="6,3 22,3 27,8 27,29 6,29" fill="#fff" stroke="#000" stroke-width="1"/>
+  <!-- folded corner -->
+  <polygon points="22,3 22,8 27,8" fill="#c0c0c0" stroke="#000" stroke-width="1"/>
+  <!-- lines -->
+  <rect x="9" y="13" width="13" height="1" fill="#000"/>
+  <rect x="9" y="16" width="14" height="1" fill="#000"/>
+  <rect x="9" y="19" width="11" height="1" fill="#000"/>
+  <rect x="9" y="22" width="14" height="1" fill="#000"/>
+  <rect x="9" y="25" width="9" height="1" fill="#000"/>
+</svg>

@@ -1,0 +1,33 @@
+---
+import WindowFrame from "./WindowFrame.astro";
+import { content } from "../../data/content.js";
+---
+
+<WindowFrame id="projects" title="Projects" label="Projects" icon="/assets/icons/folder.svg">
+  <div class="proj-grid">
+    {content.projects.map(p => (
+      <div class="proj-card">
+        {p.logo ? (
+          <div class="proj-banner" style={`background: ${p.logoBg || "#fff"};`}>
+            <img src={p.logo} alt={p.name} />
+          </div>
+        ) : (
+          <div class="proj-banner letter" style={`background: ${p.logoColor};`}>
+            <span>{p.letter}</span>
+          </div>
+        )}
+        <div class="proj-meta">
+          <div class="pname">{p.name}</div>
+          <div class="prole">{p.role}</div>
+          <div class="pdesc">{p.description}</div>
+        </div>
+        <div class="proj-screenshot">
+          {p.screenshot
+            ? <img src={p.screenshot} alt={`${p.name} screenshot`} />
+            : <div class="empty">[ Screenshot coming soon ]</div>
+          }
+        </div>
+      </div>
+    ))}
+  </div>
+</WindowFrame>

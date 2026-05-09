@@ -1,0 +1,67 @@
+---
+import { content } from "../data/content.js";
+---
+
+<div id="start-menu">
+  <div class="start-sidebar">Berlin98</div>
+  <ul class="start-list">
+    <li data-icon="about">
+      <img src="/assets/icons/computer.svg" alt="" />
+      <span>About Me</span>
+    </li>
+    <li data-icon="experience">
+      <img src="/assets/icons/briefcase.svg" alt="" />
+      <span>Experience</span>
+    </li>
+    <li data-icon="projects">
+      <img src="/assets/icons/folder.svg" alt="" />
+      <span>Projects</span>
+    </li>
+    <li data-icon="skills">
+      <img src="/assets/icons/toolbox.svg" alt="" />
+      <span>Skills</span>
+    </li>
+    <li data-icon="contact">
+      <img src="/assets/icons/mail.svg" alt="" />
+      <span>Contact</span>
+    </li>
+    <li class="divider"></li>
+    <li data-external={content.contact.telegram.url}>
+      <img src="/assets/icons/mail.svg" alt="" />
+      <span>Telegram — {content.contact.telegram.handle}</span>
+    </li>
+    <li data-external={content.contact.twitter.url}>
+      <img src="/assets/icons/mail.svg" alt="" />
+      <span>Twitter — {content.contact.twitter.handle}</span>
+    </li>
+    <li data-external={content.contact.discord.url}>
+      <img src="/assets/icons/mail.svg" alt="" />
+      <span>Discord — {content.contact.discord.handle}</span>
+    </li>
+    <li class="divider"></li>
+    <li data-icon="minesweeper">
+      <img src="/assets/icons/minesweeper.svg" alt="" />
+      <span>Minesweeper</span>
+    </li>
+    <li data-icon="resume">
+      <img src="/assets/icons/text-file.svg" alt="" />
+      <span>Resume.pdf</span>
+    </li>
+  </ul>
+</div>
+
+<div id="taskbar">
+  <button id="start-btn">
+    <img src="/assets/icons/win-logo.svg" alt="" />
+    <span>Start</span>
+  </button>
+  <div class="taskbar-divider"></div>
+  <div id="taskbar-windows"></div>
+  <div id="system-tray">
+    <div id="tray-icons">
+      <button id="sound-toggle" title="Sound" aria-label="Toggle sound">🔊</button>
+      <img src="/assets/icons/network.svg" alt="" title="Network" />
+    </div>
+    <span id="clock">--:--</span>
+  </div>
+</div>

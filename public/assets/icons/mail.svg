@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <rect width="32" height="32" fill="none"/>
+  <!-- envelope back -->
+  <rect x="3" y="8" width="26" height="18" fill="#fff" stroke="#000" stroke-width="1"/>
+  <!-- flap -->
+  <polygon points="3,8 16,18 29,8" fill="#fff" stroke="#000" stroke-width="1"/>
+  <!-- bottom lines for letter peek -->
+  <rect x="3" y="22" width="26" height="1" fill="#000"/>
+  <!-- stamp corner -->
+  <rect x="22" y="10" width="5" height="4" fill="#c00" stroke="#000" stroke-width="1"/>
+</svg>

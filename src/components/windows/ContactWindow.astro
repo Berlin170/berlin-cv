@@ -1,0 +1,29 @@
+---
+import WindowFrame from "./WindowFrame.astro";
+import { content } from "../../data/content.js";
+
+const channels = [
+  { icon: "✈", label: "Telegram", ...content.contact.telegram },
+  { icon: "𝕏", label: "Twitter / X", ...content.contact.twitter },
+  { icon: "💬", label: "Discord", ...content.contact.discord }
+];
+---
+
+<WindowFrame id="contact" title="Contact" label="Contact" icon="/assets/icons/mail.svg">
+  <div class="contact-body">
+    <p style="margin: 0 0 8px;">Open to Web3 moderation, community operations, and ecosystem support roles.</p>
+    <ul class="contact-list">
+      {channels.map(c => (
+        <li>
+          <span class="icon">{c.icon}</span>
+          <span class="label">{c.label}</span>
+          <span class="handle"><a href={c.url} target="_blank" rel="noopener noreferrer">{c.handle}</a></span>
+          <button onclick={`window.open('${c.url}', '_blank', 'noopener')`}>Open</button>
+        </li>
+      ))}
+    </ul>
+    <div class="contact-cta">
+      Reach out on any channel — fastest reply on Telegram.
+    </div>
+  </div>
+</WindowFrame>

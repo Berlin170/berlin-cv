@@ -1,0 +1,17 @@
+---
+const { id, title, icon, label } = Astro.props;
+---
+
+<div class="window win" data-icon={id} data-label={label || title} data-icon-img={icon}>
+  <div class="title-bar">
+    <div class="title-bar-text">{title}</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <slot />
+  </div>
+</div>

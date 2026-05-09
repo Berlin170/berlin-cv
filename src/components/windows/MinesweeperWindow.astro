@@ -1,0 +1,14 @@
+---
+import WindowFrame from "./WindowFrame.astro";
+---
+
+<WindowFrame id="minesweeper" title="Minesweeper" label="Minesweeper" icon="/assets/icons/minesweeper.svg">
+  <div id="ms-root">
+    <div class="mine-header">
+      <span class="mine-counter" id="ms-mines">010</span>
+      <button class="mine-reset" id="ms-reset" title="New Game">🙂</button>
+      <span class="mine-timer" id="ms-time">000</span>
+    </div>
+    <div class="mine-board" id="ms-board"></div>
+  </div>
+</WindowFrame>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <rect width="32" height="32" fill="none"/>
+  <!-- back tab -->
+  <rect x="3" y="8" width="11" height="3" fill="#daa520" stroke="#000" stroke-width="1"/>
+  <!-- folder body -->
+  <rect x="3" y="10" width="26" height="16" fill="#ffd700" stroke="#000" stroke-width="1"/>
+  <rect x="3" y="10" width="26" height="2" fill="#ffea66"/>
+  <rect x="3" y="11" width="26" height="1" fill="#fff"/>
+</svg>

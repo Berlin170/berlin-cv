@@ -1,0 +1,22 @@
+---
+import WindowFrame from "./WindowFrame.astro";
+import { content } from "../../data/content.js";
+---
+
+<WindowFrame id="about" title="About Me" label="About Me" icon="/assets/icons/computer.svg">
+  <div class="about-grid">
+    <div>
+      <div class="about-avatar">
+        <img src={content.avatar} alt={content.name} />
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="display-name">{content.name}</div>
+      <div class="real-name">a.k.a. {content.realName} · {content.location}</div>
+      {content.bio.map(p => <p>{p}</p>)}
+      <div class="about-meta">
+        Last modified: <script is:inline>document.write(new Date().toLocaleDateString("en-GB", { year:"numeric", month:"long", day:"numeric" }))</script>
+      </div>
+    </div>
+  </div>
+</WindowFrame>

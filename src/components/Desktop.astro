@@ -1,0 +1,23 @@
+---
+const icons = [
+  { id: "about",      label: "About Me",     icon: "/assets/icons/computer.svg" },
+  { id: "experience", label: "Experience",   icon: "/assets/icons/briefcase.svg" },
+  { id: "projects",   label: "Projects",     icon: "/assets/icons/folder.svg" },
+  { id: "skills",     label: "Skills",       icon: "/assets/icons/toolbox.svg" },
+  { id: "contact",    label: "Contact",      icon: "/assets/icons/mail.svg" },
+  { id: "resume",     label: "Resume.pdf",   icon: "/assets/icons/text-file.svg" },
+  { id: "minesweeper",label: "Minesweeper",  icon: "/assets/icons/minesweeper.svg" },
+  { id: "recycle",    label: "Recycle Bin",  icon: "/assets/icons/recycle.svg" }
+];
+---
+
+<div id="desktop">
+  <div class="icon-grid">
+    {icons.map(i => (
+      <button class="desktop-icon" data-icon={i.id} data-label={i.label}>
+        <img src={i.icon} alt={i.label} />
+        <span class="icon-label">{i.label}</span>
+      </button>
+    ))}
+  </div>
+</div>

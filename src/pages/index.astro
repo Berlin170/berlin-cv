@@ -1,0 +1,119 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Desktop from "../components/Desktop.astro";
+import Taskbar from "../components/Taskbar.astro";
+import MobileView from "../components/MobileView.astro";
+import AboutWindow from "../components/windows/AboutWindow.astro";
+import ExperienceWindow from "../components/windows/ExperienceWindow.astro";
+import ProjectsWindow from "../components/windows/ProjectsWindow.astro";
+import SkillsWindow from "../components/windows/SkillsWindow.astro";
+import ContactWindow from "../components/windows/ContactWindow.astro";
+import RecycleWindow from "../components/windows/RecycleWindow.astro";
+import MinesweeperWindow from "../components/windows/MinesweeperWindow.astro";
+import ImageViewerWindow from "../components/windows/ImageViewerWindow.astro";
+---
+
+<Layout title="Berlin — Web3 Community Operations & Moderation Specialist">
+  <Desktop />
+
+  <AboutWindow />
+  <ExperienceWindow />
+  <ProjectsWindow />
+  <SkillsWindow />
+  <ContactWindow />
+  <RecycleWindow />
+  <MinesweeperWindow />
+  <ImageViewerWindow />
+
+  <Taskbar />
+
+  <MobileView />
+
+  <script>
+    import { initWindows, openWindow } from "../scripts/window-manager.js";
+    import { initTaskbar } from "../scripts/taskbar.js";
+    import { initMinesweeper } from "../scripts/minesweeper.js";
+    import { initSound } from "../scripts/sound.js";
+
+    // Skip the desktop UI entirely on mobile — let CSS handle the mobile view
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (!isMobile) {
+      initWindows();
+      initTaskbar();
+      initMinesweeper();
+      initSound();
+
+      // Auto-open About on load
+      requestAnimationFrame(() => openWindow("about"));
+
+      // Image viewer: click any project screenshot to open full-size
+      document.querySelectorAll(".proj-screenshot img").forEach(img => {
+        img.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const src = (img as HTMLImageElement).src;
+          const alt = (img as HTMLImageElement).alt || "Image";
+          const viewerImg = document.getElementById("viewer-img") as HTMLImageElement;
+          const viewerName = document.getElementById("viewer-filename");
+          if (viewerImg) viewerImg.src = src;
+          if (viewerName) viewerName.textContent = alt;
+          // Reset zoom
+          if (viewerImg) viewerImg.style.width = "";
+          openWindow("viewer");
+        });
+      });
+
+      // Viewer toolbar
+      const canvas = document.getElementById("viewer-canvas");
+      const vimg = document.getElementById("viewer-img") as HTMLImageElement | null;
+      let zoom = 1;
+      const applyZoom = () => {
+        if (!vimg) return;
+        canvas?.classList.remove("fit");
+        vimg.style.width = (vimg.naturalWidth * zoom) + "px";
+        vimg.style.maxWidth = "none";
+        vimg.style.height = "auto";
+      };
+      document.getElementById("viewer-zoom-in")?.addEventListener("click", () => { zoom = Math.min(4, zoom + 0.25); applyZoom(); });
+      document.getElementById("viewer-zoom-out")?.addEventListener("click", () => { zoom = Math.max(0.25, zoom - 0.25); applyZoom(); });
+      document.getElementById("viewer-fit")?.addEventListener("click", () => {
+        zoom = 1;
+        if (vimg) { vimg.style.width = ""; vimg.style.maxWidth = "100%"; }
+        canvas?.classList.add("fit");
+      });
+
+      document.querySelectorAll(".exp-row").forEach(row => {
+        row.addEventListener("click", () => {
+          const i = row.getAttribute("data-row");
+          const detail = document.querySelector(`.exp-detail[data-detail="${i}"]`);
+          if (!detail) return;
+          document.querySelectorAll(".exp-row").forEach(r => r.classList.remove("selected"));
+          document.querySelectorAll(".exp-detail").forEach(d => d !== detail && d.classList.remove("open"));
+          row.classList.add("selected");
+          detail.classList.toggle("open");
+        });
+      });
+
+      const animateSkillBars = () => {
+        document.querySelectorAll(".skill-bar-fill").forEach(el => {
+          const pct = parseInt(el.getAttribute("data-pct") || "0", 10);
+          requestAnimationFrame(() => { (el as HTMLElement).style.width = pct + "%"; });
+        });
+      };
+
+      document.addEventListener("win:open", (e) => {
+        if ((e as CustomEvent).detail.id === "skills") {
+          setTimeout(animateSkillBars, 50);
+        }
+      });
+    } else {
+      // Mobile: animate skill bars in mobile view on scroll-into-view
+      const bars = document.querySelectorAll(".m-skill-row .bar > span");
+      bars.forEach(b => {
+        const final = (b as HTMLElement).style.width;
+        (b as HTMLElement).style.width = "0";
+        setTimeout(() => { (b as HTMLElement).style.transition = "width 1.2s steps(24)"; (b as HTMLElement).style.width = final; }, 200);
+      });
+    }
+  </script>
+</Layout>
