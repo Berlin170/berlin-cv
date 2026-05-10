@@ -133,7 +133,7 @@ letter: "PR",
       logoBg: "#f8fafc",
       letter: "VA",
       logoColor: "#ec4899",
-      screenshot: null
+      screenshot: "/assets/screenshots/Vanar.png"
     },
     {
       name: "Pi Squared",
