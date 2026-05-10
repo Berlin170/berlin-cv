@@ -14,6 +14,20 @@ import ImageViewerWindow from "../components/windows/ImageViewerWindow.astro";
 ---
 
 <Layout title="Berlin — Web3 Community Operations & Moderation Specialist">
+
+  <!-- Boot Screen -->
+  <div id="boot-screen" style="display:none; position:fixed; inset:0; background:#000; z-index:9999; flex-direction:column; align-items:center; justify-content:center; font-family:'Courier New',monospace; color:#aaa;">
+    <div style="width:420px; max-width:90vw;">
+      <div style="color:#fff; font-size:20px; font-weight:bold; margin-bottom:6px;">Berlin Portfolio OS v1.0</div>
+      <div style="font-size:13px; margin-bottom:4px;">Copyright (C) 2024 Berlin. All rights reserved.</div>
+      <div style="font-size:13px; margin-bottom:20px;">Web3 Community Operations & Moderation Specialist</div>
+      <div style="background:#111; border:1px solid #333; height:20px; width:100%; margin-bottom:12px;">
+        <div id="boot-bar-fill" style="background:#000080; height:100%; width:0%; transition:width 0.5s ease;"></div>
+      </div>
+      <div id="boot-status" style="font-size:12px; color:#888;">Initializing Berlin Portfolio OS...</div>
+    </div>
+  </div>
+
   <Desktop />
 
   <AboutWindow />
@@ -30,24 +44,22 @@ import ImageViewerWindow from "../components/windows/ImageViewerWindow.astro";
   <MobileView />
 
   <script>
-    import { initWindows, openWindow } from "../scripts/window-manager.js";
+    import { initWindows, openWindow, initBootScreen } from "../scripts/window-manager.js";
     import { initTaskbar } from "../scripts/taskbar.js";
     import { initMinesweeper } from "../scripts/minesweeper.js";
     import { initSound } from "../scripts/sound.js";
 
-    // Skip the desktop UI entirely on mobile — let CSS handle the mobile view
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     if (!isMobile) {
+      initBootScreen();
       initWindows();
       initTaskbar();
       initMinesweeper();
       initSound();
 
-      // Auto-open About on load
       requestAnimationFrame(() => openWindow("about"));
 
-      // Image viewer: click any project screenshot to open full-size
       document.querySelectorAll(".proj-screenshot img").forEach(img => {
         img.addEventListener("click", (e) => {
           e.stopPropagation();
@@ -57,13 +69,11 @@ import ImageViewerWindow from "../components/windows/ImageViewerWindow.astro";
           const viewerName = document.getElementById("viewer-filename");
           if (viewerImg) viewerImg.src = src;
           if (viewerName) viewerName.textContent = alt;
-          // Reset zoom
           if (viewerImg) viewerImg.style.width = "";
           openWindow("viewer");
         });
       });
 
-      // Viewer toolbar
       const canvas = document.getElementById("viewer-canvas");
       const vimg = document.getElementById("viewer-img") as HTMLImageElement | null;
       let zoom = 1;
@@ -82,7 +92,6 @@ import ImageViewerWindow from "../components/windows/ImageViewerWindow.astro";
         canvas?.classList.add("fit");
       });
 
-      // Click-and-drag panning in the viewer
       if (canvas) {
         let panning = false, startX = 0, startY = 0, scroll0X = 0, scroll0Y = 0;
         const onDown = (e: MouseEvent) => {
@@ -106,7 +115,6 @@ import ImageViewerWindow from "../components/windows/ImageViewerWindow.astro";
         window.addEventListener("mouseup", onUp);
         canvas.addEventListener("mouseleave", onUp);
 
-        // Touch support
         canvas.addEventListener("touchstart", (e: TouchEvent) => {
           if (!e.touches[0]) return;
           panning = true;
@@ -147,7 +155,6 @@ import ImageViewerWindow from "../components/windows/ImageViewerWindow.astro";
         }
       });
     } else {
-      // Mobile: animate skill bars in mobile view on scroll-into-view
       const bars = document.querySelectorAll(".m-skill-row .bar > span");
       bars.forEach(b => {
         const final = (b as HTMLElement).style.width;
