@@ -149,10 +149,10 @@ letter: "PR",
       name: "Walle",
       role: "Community Moderator",
       description: "Community moderation and user support across Web3 channels.",
-      logo: null,
+      logo: "/assets/logos/Walle.png",
       letter: "WA",
       logoColor: "#a78bfa",
-      screenshot: null
+      screenshot: "/assets/screenshots/Walle.png"
     }
   ],
 
