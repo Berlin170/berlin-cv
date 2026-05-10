@@ -103,7 +103,7 @@ letter: "PR",
       logoBg: "#0a0a1a",
       letter: "NU",
       logoColor: "#f59e0b",
-      screenshot: null
+      screenshot:"/assets/screenshots/Nulink.png"
     },
     {
       name: "Gonka AI",
