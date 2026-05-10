@@ -20,7 +20,7 @@ export const content = {
       role: "Technical Ambassador",
       company: "Redbelly Network",
       period: "2024 — Present",
-      type: "Full-time",
+      type: "Contract",
       bullets: [
         "Assist with validator operations and testing",
         "Create educational resources and guides for the community",
@@ -31,7 +31,7 @@ export const content = {
       role: "Community Moderator & Support Contributor",
       company: "Privasea AI",
       period: "2023 — Present",
-      type: "Contract",
+      type: "Full-time",
       bullets: [
         "Provide front-line support for node setup, wallets, and explorer lookups",
         "Guide users through troubleshooting issues with clarity and patience",
