@@ -137,13 +137,13 @@ letter: "PR",
     },
     {
       name: "Pi Squared",
-      role: "Community Moderator",
-      description: "Community moderation and user support for a zero-knowledge proof / verifiable settlement project.",
+      role: "Ambassador",
+      description: "Supported community growth and ecosystem awareness through X/Twitter engagement for FAST (formerly Pi Squared), contributing to promotional campaigns, social engagement, and Web3 outreach.",
       logo: "/assets/logos/pi-squared.png",
       logoBg: "#f5cdfa",
       letter: "Pi",
       logoColor: "#a855f7",
-      screenshot: null
+      screenshot: "/assets/screenshots/Fast.png"
     },
     {
       name: "Walle",
