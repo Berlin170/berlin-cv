@@ -455,7 +455,7 @@
 
 .viewer-canvas img {
   display: inline-block;
-  max-width: none;
+ max-width: min(100%, 1200px);
   height: auto;
   image-rendering: crisp-edges;
   background: #fff;
