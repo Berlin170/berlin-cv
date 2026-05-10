@@ -150,6 +150,7 @@ letter: "PR",
       role: "Community Moderator",
       description: "Community moderation and user support across Web3 channels.",
       logo: "/assets/logos/Walle.png",
+      logoBg: "#000000",
       letter: "WA",
       logoColor: "#a78bfa",
       screenshot: "/assets/screenshots/Walle.png"
