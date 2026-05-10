@@ -255,14 +255,14 @@
   margin: 0 8px 8px;
   border: 1px inset #808080;
   background: #fff;
-  height: 120px;
+  height: 160px;
   overflow: hidden;
 }
 
 .proj-screenshot img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: top;
 }
 
@@ -455,7 +455,7 @@
 
 .viewer-canvas img {
   display: inline-block;
- max-width: min(100%, 1200px);
+  max-width: min(100%, 1200px);
   height: auto;
   image-rendering: crisp-edges;
   background: #fff;
