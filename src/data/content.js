@@ -80,6 +80,7 @@ export const content = {
       role: "Moderator & Support",
       description: "Front-line support for node setup, wallet ops, and explorer lookups across a privacy-first AI compute network.",
       logo: "/assets/logos/Privaseaety.png",
+      logoBg: "#0f172a",
 letter: "PR",
       logoColor: "#10b981",
       screenshot: "/assets/screenshots/Privasea_DC.png"
