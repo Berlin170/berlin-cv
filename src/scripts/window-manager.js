@@ -24,7 +24,6 @@ function placeWindow(win) {
   if (win.dataset.placed === "1") return;
   const w = win.offsetWidth || 600;
   const h = win.offsetHeight || 400;
-  // Center the first window, then cascade from there
   const baseX = Math.max(140, Math.floor((window.innerWidth - w) / 2) - 80);
   const baseY = Math.max(30, Math.floor((window.innerHeight - h - TASKBAR_HEIGHT) / 2) - 60);
   const offset = state.cascade * CASCADE_STEP;
@@ -167,7 +166,6 @@ export function initWindows() {
     attachWindowControls(win);
   });
 
-  // Desktop icon clicks: single click selects + opens immediately
   document.querySelectorAll(".desktop-icon").forEach(icon => {
     icon.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -177,17 +175,14 @@ export function initWindows() {
     });
   });
 
-  // Click on empty desktop deselects
   document.getElementById("desktop")?.addEventListener("click", () => {
     document.querySelectorAll(".desktop-icon").forEach(i => i.classList.remove("selected"));
   });
 
-  // Esc closes active window
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && state.active) closeWindow(state.active);
   });
 
-  // Disable native context menu
   document.addEventListener("contextmenu", (e) => e.preventDefault());
 }
 
@@ -206,4 +201,40 @@ function handleIconActivate(id) {
     return;
   }
   openWindow(id);
+}
+
+export function initBootScreen() {
+  if (sessionStorage.getItem("booted")) return;
+  sessionStorage.setItem("booted", "1");
+
+  const boot = document.getElementById("boot-screen");
+  if (!boot) return;
+
+  boot.style.display = "flex";
+  const fill = document.getElementById("boot-bar-fill");
+  const status = document.getElementById("boot-status");
+
+  const messages = [
+    "Initializing Berlin Portfolio OS...",
+    "Loading community experience...",
+    "Mounting Web3 modules...",
+    "Starting desktop environment...",
+    "Welcome."
+  ];
+
+  let step = 0;
+  const interval = setInterval(() => {
+    step++;
+    const pct = Math.min(100, step * 22);
+    if (fill) fill.style.width = pct + "%";
+    if (status && messages[step]) status.textContent = messages[step];
+    if (step >= 4) {
+      clearInterval(interval);
+      setTimeout(() => {
+        boot.style.transition = "opacity 0.8s ease";
+        boot.style.opacity = "0";
+        setTimeout(() => { boot.style.display = "none"; }, 800);
+      }, 600);
+    }
+  }, 600);
 }
