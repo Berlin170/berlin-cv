@@ -566,3 +566,16 @@
 .mc-6 { color: #008080; }
 .mc-7 { color: #000000; }
 .mc-8 { color: #808080; }
+/* ----- Crisp text override ----- */
+body,
+.win,
+.window-body,
+.about-text,
+.about-text p,
+.exp-detail,
+.proj-meta,
+.contact-body {
+  font-family: "Segoe UI", Tahoma, "MS Sans Serif", Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
