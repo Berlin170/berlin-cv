@@ -16,11 +16,9 @@ html, body {
   padding: 0;
   height: 100%;
   overflow: hidden;
-  font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+  font-family: "Pixelated MS Sans Serif", "MS Sans Serif", Arial, sans-serif;
   font-size: var(--base-fs);
   cursor: default;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
