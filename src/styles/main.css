@@ -18,7 +18,9 @@ html, body {
   overflow: hidden;
   font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
   font-size: var(--base-fs);
-  cursor: default;
+cursor: default;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
 }
 
 body {
