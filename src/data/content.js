@@ -10,8 +10,11 @@ export const content = {
   avatar: "/assets/avatar.png",
 
   bio: [
-    "Hey, I'm Berlin — a Web3 community operations specialist. I help projects build, manage, and grow their communities across Discord and Telegram, from server setup to daily moderation and user support.
-I've worked with Tanari, Gonka AI, Vanar Chain, Redbelly Network, NuLink Network, Privasea AI, Walle, Helix Labs, and Pi Squared."
+    "Hey, I'm Berlin — a Web3 community operations specialist. I help projects build, manage, and grow their communities across Discord and Telegram, from full server setup to daily moderation and user support.",
+    "Moderator — I run and set up Discord servers and Telegram channels from scratch, installing and configuring bots, building channel structure, and writing rules. I spot scammers and spammers fast, take action, and respond promptly to tickets and member questions.",
+    "Ambassador — I promote projects on X through original content, organize cross-project collaborations, translate announcements for regional channels, and host AMAs and gaming events to keep communities active and engaged.",
+    "Content Creator — I create hand-drawn art on a graphics tablet, design with Canva and Figma, and constantly experiment with new AI tools. I also shoot and edit videos for projects, with strong CapCut skills.",
+    "I've worked with Tanari, Gonka AI, Vanar Chain, Redbelly Network, NuLink Network, Privasea AI, Walle, Helix Labs, and Pi Squared."
   ],
 
   experience: [
@@ -61,8 +64,6 @@ I've worked with Tanari, Gonka AI, Vanar Chain, Redbelly Network, NuLink Network
     }
   ],
 
-  // Each project: logo (banner image OR null for letter fallback) + screenshot.
-  // logoColor used for banner fallback bg or as accent.
   projects: [
     {
       name: "Redbelly Network",
@@ -80,7 +81,7 @@ I've worked with Tanari, Gonka AI, Vanar Chain, Redbelly Network, NuLink Network
       description: "Front-line support for node setup, wallet ops, and explorer lookups across a privacy-first AI compute network.",
       logo: "/assets/logos/Privaseaety.png",
       logoBg: "#0f172a",
-letter: "PR",
+      letter: "PR",
       logoColor: "#10b981",
       screenshot: "/assets/screenshots/Privasea_DC.png"
     },
