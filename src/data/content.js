@@ -10,9 +10,8 @@ export const content = {
   avatar: "/assets/avatar.png",
 
   bio: [
-    "Hey, I'm Berlin. I work in Web3 community operations — managing Telegram and Discord communities, supporting users, and handling project-related queries across wallets, transactions, platform features, and general user issues.",
-    "I've moderated communities for Tanari, Gonka AI, Vanar Chain, Redbelly Network, NuLink Network, Privasea AI, Walle, Helix Labs, and Pi Squared.",
-    "Open to Web3 moderation, community operations, and ecosystem support roles."
+    "Hey, I'm Berlin — a Web3 community operations specialist. I help projects build, manage, and grow their communities across Discord and Telegram, from server setup to daily moderation and user support.
+I've worked with Tanari, Gonka AI, Vanar Chain, Redbelly Network, NuLink Network, Privasea AI, Walle, Helix Labs, and Pi Squared."
   ],
 
   experience: [
