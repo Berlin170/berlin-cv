@@ -579,3 +579,31 @@ body,
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
 }
+
+/* ----- Services window ----- */
+.services-body {
+  width: 460px;
+  max-width: 100%;
+}
+.services-intro {
+  font-size: 13px;
+  margin: 0 0 12px;
+  font-weight: bold;
+}
+.service-card {
+  background: #fff;
+  border: 2px inset #808080;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.service-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000080;
+  margin-bottom: 4px;
+}
+.service-blurb {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #222;
+}
