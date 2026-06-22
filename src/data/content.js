@@ -11,10 +11,22 @@ export const content = {
 
   bio: [
     "Hey, I'm Berlin — a Web3 community operations specialist. I help projects build, manage, and grow their communities across Discord and Telegram, from full server setup to daily moderation and user support.",
-    "Moderator — I run and set up Discord servers and Telegram channels from scratch, installing and configuring bots, building channel structure, and writing rules. I spot scammers and spammers fast, take action, and respond promptly to tickets and member questions.",
-    "Ambassador — I promote projects on X through original content, organize cross-project collaborations, translate announcements for regional channels, and host AMAs and gaming events to keep communities active and engaged.",
-    "Content Creator — I create hand-drawn art on a graphics tablet, design with Canva and Figma, and constantly experiment with new AI tools. I also shoot and edit videos for projects, with strong CapCut skills.",
     "I've worked with Tanari, Gonka AI, Vanar Chain, Redbelly Network, NuLink Network, Privasea AI, Walle, Helix Labs, and Pi Squared."
+  ],
+
+  services: [
+    {
+      title: "Moderator",
+      blurb: "I run and set up Discord servers and Telegram channels from scratch — bots, channel structure, rules. I spot scammers fast, take action, and answer tickets and member questions promptly."
+    },
+    {
+      title: "Ambassador",
+      blurb: "I promote projects on X with original content, organize cross-project collabs, translate announcements for regional channels, and host AMAs and gaming events to keep communities active."
+    },
+    {
+      title: "Content Creator",
+      blurb: "I create hand-drawn art on a graphics tablet, design with Canva and Figma, and experiment with new AI tools. I also shoot and edit videos for projects, with strong CapCut skills."
+    }
   ],
 
   experience: [
