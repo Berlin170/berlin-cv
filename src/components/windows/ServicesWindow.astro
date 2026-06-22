@@ -1,0 +1,15 @@
+---
+import WindowFrame from "./WindowFrame.astro";
+import { content } from "../../data/content.js";
+---
+<WindowFrame id="services" title="Services" label="Services" icon="/assets/icons/briefcase.svg">
+  <div class="services-body">
+    <p class="services-intro">What I can do for your project:</p>
+    {content.services.map(s => (
+      <div class="service-card">
+        <div class="service-title">{s.title}</div>
+        <div class="service-blurb">{s.blurb}</div>
+      </div>
+    ))}
+  </div>
+</WindowFrame>
