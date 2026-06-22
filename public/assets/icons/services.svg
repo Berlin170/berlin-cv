@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" shape-rendering="crispEdges">
+  <!-- Win98 style gear/cog icon for Services -->
+  <!-- gear teeth -->
+  <g fill="#808080">
+    <rect x="21" y="3" width="6" height="6"/>
+    <rect x="21" y="39" width="6" height="6"/>
+    <rect x="3" y="21" width="6" height="6"/>
+    <rect x="39" y="21" width="6" height="6"/>
+    <rect x="9" y="9" width="6" height="6"/>
+    <rect x="33" y="9" width="6" height="6"/>
+    <rect x="9" y="33" width="6" height="6"/>
+    <rect x="33" y="33" width="6" height="6"/>
+  </g>
+  <!-- gear body -->
+  <circle cx="24" cy="24" r="15" fill="#c0c0c0" stroke="#404040" stroke-width="2"/>
+  <circle cx="24" cy="24" r="15" fill="none" stroke="#ffffff" stroke-width="1"/>
+  <!-- highlight -->
+  <circle cx="24" cy="24" r="13" fill="none" stroke="#dfdfdf" stroke-width="1"/>
+  <!-- center hole -->
+  <circle cx="24" cy="24" r="6" fill="#808080" stroke="#404040" stroke-width="1.5"/>
+  <circle cx="24" cy="24" r="4" fill="#000080"/>
+</svg>
