@@ -23,6 +23,10 @@ export const content = {
       title: "Ambassador",
       blurb: "I promote projects on X with original content, organize cross-project collabs, translate announcements for regional channels, and host AMAs and gaming events to keep communities active."
     },
+    {
+  title: "Bot Developer",
+  blurb: "I build custom Discord bots from scratch — wallet linking, governance tools, leaderboards, and AI-powered FAQ commands — to automate community operations."
+},
      {
       title: "Event & Game Host",
       blurb: "I host live games and engagement events in Discord — trivia, quizzes, giveaways, and community games — to boost activity, retention, and member energy."
