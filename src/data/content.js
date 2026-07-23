@@ -172,7 +172,16 @@ export const content = {
       screenshot: "/assets/screenshots/Walle.png"
     }
   ],
-
+{
+  name: "Redbelly DAO Bot",
+  role: "Builder & Maintainer",
+  description: "Built a Discord bot from scratch for the Redbelly DAO — wallet linking, Snapshot proposal tracking, a leaderboard, and an AI-powered /ask FAQ command.",
+  logo: "/assets/logos/redbelly-dao-logo.png",
+  logoBg: "#ffffff",
+  letter: "DB",
+  logoColor: "#ef4444",
+  screenshot: "/assets/screenshots/redbelly-dao-bot.png"
+},
   skills: {
     "Community Ops": [
       { name: "Discord Moderation", level: 100 },
